@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Perfil do Jogador - Labirinto do Amor</title>
+  <link rel="stylesheet" href="perfil.css">
+</head>
+<body>
+  <main class="container">
+    <h1>🎯 Perfil do Jogador</h1>
+<p id="boasVindas"></p>
+
+    <div class="perfil-box">
+      <label for="nomeJogador">Nome:</label>
+      <input type="text" id="nomeJogador" />
+      <button id="salvarNome">Salvar</button>
+    </div>
+
+    <div class="estatisticas">
+      <p><strong>Recorde:</strong> <span id="recorde"></span> pontos</p>
+      <p><strong>Última Pontuação:</strong> <span id="ultimaPontuacao"></span> pontos</p>
+      <p><strong>Último Nível:</strong> <span id="ultimoNivel"></span></p>
+      <p><strong>Última Partida:</strong> <span id="ultimaData"></span></p>
+    </div>
+
+    <button id="resetarProgresso" class="btn">🔄 Resetar Progresso</button>
+    <a href="index.html" class="btn voltar">← Voltar ao Jogo</a>
+  </main>
+
+  <script src="perfil.js"></script>
+</body>
+</html>

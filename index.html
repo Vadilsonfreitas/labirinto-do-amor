@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Labirinto do Amor</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="estilo.css">
+</head>
+<body>
+  <!-- Botão para abrir menu lateral -->
+  <button class="abrir-menu" id="abrirMenu">☰</button>
+
+  <!-- Menu Lateral -->
+  <nav class="menu-lateral" id="menuLateral">
+    <h2>💖 Menu</h2>
+
+    <div class="menu-grupo">
+      <h3>👤 Jogador</h3>
+      <p id="boasVindas">Olá, Jogador(a)!</p>
+      <a href="perfil.html" class="btn">📄 Ver Perfil</a>
+    </div>
+
+    <div class="menu-grupo">
+      <h3>🎮 Controlo</h3>
+      <button id="pausarBtn">⏸️ Pausar</button>
+      <button id="continuarBtn">▶️ Continuar</button>
+      <button id="reiniciarBtn">🔄 Reiniciar</button>
+    </div>
+
+    <div class="menu-grupo">
+      <h3>🎨 Aparência</h3>
+      <button id="temaBtn">🌙 Alternar Tema</button>
+    </div>
+  </nav>
+
+  <!-- Conteúdo principal -->
+  <main>
+    <!-- Tela Inicial -->
+    <section class="porta-do-amor" id="inicio">
+      <h1>Labirinto do Amor</h1>
+      <p>Descubra o caminho certo e encontre o coração verdadeiro.</p>
+      <button class="btn" id="abrirPorta">💘 Começar o Jogo</button>
+    </section>
+
+    <!-- Seção do jogo -->
+    <section class="jogo-de-memorias" id="jogo" style="display: none;" data-nivel="1">
+      <div class="info-bar">
+        <span class="pontuacao" id="pontuacao">Pontuação: 0</span>
+        <span class="recorde" id="recorde">Recorde: 0</span>
+        <span class="cronometro" id="cronometro">Tempo: 60s</span>
+      </div>
+
+      <div class="progress-bar">
+        <div class="progress" id="barraTempo"></div>
+      </div>
+
+      <div class="vida" id="barraVida">❤️❤️❤️</div>
+      <h2 id="tituloNivel">Jogo de Memórias - Nível 1</h2>
+
+      <div class="cartas" id="cartasContainer"></div>
+    </section>
+  </main>
+
+  <!-- Personagem flutuante e corações -->
+  <div class="personagem">🧑‍🎤</div>
+  <div id="coracoesFlutuantes"></div>
+
+  <!-- Scripts -->
+  <script>
+    // Mostra nome do jogador na mensagem de boas-vindas
+    document.addEventListener("DOMContentLoaded", () => {
+      const nome = localStorage.getItem("nomeJogador") || "Jogador(a)";
+      const boasVindas = document.getElementById("boasVindas");
+      if (boasVindas) boasVindas.textContent = `Olá, ${nome}! 👋`;
+    });
+  </script>
+  <script src="script.js"></script>
+</body>
+</html>
