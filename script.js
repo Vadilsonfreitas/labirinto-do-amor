@@ -14,14 +14,14 @@ document.addEventListener("DOMContentLoaded", () => {
   const barraVida = document.getElementById("barraVida");
   const coracoesDiv = document.getElementById("coracoesFlutuantes");
 
-  let tempo = 60;
+  let tempo = 40;
   let intervaloTempo;
   let pontuacao = 0;
   let cartasViradas = [];
   let cartas = [];
   let nivelAtual = 1;
   const totalNiveis = 5;
-  let tentativas = 3;
+  let tentativas = 10;
   let recorde = localStorage.getItem("recorde") || 0;
 
   abrirMenu.addEventListener("click", () => {
@@ -47,7 +47,7 @@ document.addEventListener("DOMContentLoaded", () => {
   }
 
   function atualizarTituloNivel() {
-    tituloNivel.textContent = `Jogo de Memórias - Nível ${nivelAtual}`;
+    tituloNivel.textContent = `Mete só na Memória - Nível ${nivelAtual}`;
   }
 
   function gerarCartas() {
@@ -137,22 +137,22 @@ document.addEventListener("DOMContentLoaded", () => {
 
     if (venceu) {
       tocarSom("vitoria");
-      alert("💘 Você venceu o Labirinto do Amor!");
+      alert("👽 Você venceu o Labirinto Esccondido!");
     } else {
-      alert("😢 Fim de jogo! Você perdeu.");
+      alert("☠ Fim de jogo! Você perdeu.");
     }
 
     reiniciarJogo();
   }
 
   function atualizarVida() {
-    barraVida.innerHTML = "❤️".repeat(tentativas);
+    barraVida.innerHTML = "🦠".repeat(tentativas);
   }
 
   function reiniciarJogo() {
     pontuacao = 0;
     nivelAtual = 1;
-    tentativas = 3;
+    tentativas = 10;
     cartasViradas = [];
     document.getElementById("pontuacao").textContent = `Pontuação: 0`;
     iniciarJogo();
@@ -172,7 +172,7 @@ document.addEventListener("DOMContentLoaded", () => {
   intervaloTempo = setInterval(() => {
     tempo--;
     cronometro.textContent = `Tempo: ${tempo}s`;
-    barraTempo.style.width = `${(tempo / 60) * 100}%`;
+    barraTempo.style.width = `${(tempo / 40) * 100}%`;
 
     if (tempo <= 0) {
       clearInterval(intervaloTempo);
@@ -184,7 +184,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
 
 function iniciarCronometro() {
-  tempo = 60;
+  tempo = 40;
   cronometro.textContent = `Tempo: ${tempo}s`;
   barraTempo.style.width = "100%";
 
@@ -220,11 +220,39 @@ document.getElementById("continuarBtn").disabled = true;
   function gerarCoraçoesFlutuantes() {
     setInterval(() => {
       const coracao = document.createElement("div");
-      coracao.className = "coraçao";
-      coracao.textContent = "❤️";
+      coracao.className = "Teias";
+      coracao.textContent = "🕸";
       coracao.style.left = Math.random() * 100 + "vw";
       coracoesDiv.appendChild(coracao);
       setTimeout(() => coracao.remove(), 5000);
     }, 800);
   }
 });
+
+
+// Função para gerar os brilhos mágicos no fundo
+        function generateSparkles() {
+            const sparklesContainer = document.getElementById('sparkles');
+            const sparkle = document.createElement('div');
+            const size = Math.random() * 10 + 5; // Tamanho aleatório entre 5px e 15px
+            const positionX = Math.random() * 100; // Posição aleatória na tela
+            const positionY = Math.random() * 100; 
+
+            sparkle.classList.add('sparkle');
+            sparkle.style.width = `${size}px`;
+            sparkle.style.height = `${size}px`;
+            sparkle.style.top = `${positionY}%`;
+            sparkle.style.left = `${positionX}%`;
+
+            sparklesContainer.appendChild(sparkle);
+
+            // Remover o brilho após a animação
+            setTimeout(() => {
+                sparkle.remove();
+            }, 3000);
+        }
+
+        function showMagic() {
+            setInterval(generateSparkles, 200); 
+            // Gera brilhos mágicos a cada 200ms
+        }
