@@ -1,6 +1,6 @@
 body {
   font-family: 'Poppins', sans-serif;
-  background-color: #ffe6ec;
+  background-color: #11111191;
   color: #333;
   padding: 30px;
   text-align: center;
@@ -28,7 +28,7 @@ input[type="text"] {
 
 .btn {
   padding: 10px 20px;
-  background-color: #f03a5f;
+  background-color: #f50031;
   color: white;
   border: none;
   border-radius: 6px;

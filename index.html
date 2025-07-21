@@ -4,7 +4,6 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Labirinto do Amor</title>
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;600&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="estilo.css">
 </head>
 <body>
@@ -12,35 +11,37 @@
   <button class="abrir-menu" id="abrirMenu">☰</button>
 
   <!-- Menu Lateral -->
-  <nav class="menu-lateral" id="menuLateral">
-    <h2>💖 Menu</h2>
+  <nav class="menu-lateral" id="menuLateral"><br><br><br><br>
+    <h2>Menu</h2>
 
     <div class="menu-grupo">
-      <h3>👤 Jogador</h3>
-      <p id="boasVindas">Olá, Jogador(a)!</p>
+      <h3>👤 Jogador</h3><br>
+      <p id="boasVindas">Olá, Jogador(a)!</p><br>
       <a href="perfil.html" class="btn">📄 Ver Perfil</a>
     </div>
 
     <div class="menu-grupo">
-      <h3>🎮 Controlo</h3>
-      <button id="pausarBtn">⏸️ Pausar</button>
-      <button id="continuarBtn">▶️ Continuar</button>
-      <button id="reiniciarBtn">🔄 Reiniciar</button>
-    </div>
-
-    <div class="menu-grupo">
-      <h3>🎨 Aparência</h3>
+      <h3>🎨 Cor</h3>
       <button id="temaBtn">🌙 Alternar Tema</button>
+      <button onclick="showMagic()">Magia</button>
     </div>
   </nav>
 
   <!-- Conteúdo principal -->
   <main>
+    
+
+
+
+
+    
     <!-- Tela Inicial -->
+     
     <section class="porta-do-amor" id="inicio">
-      <h1>Labirinto do Amor</h1>
-      <p>Descubra o caminho certo e encontre o coração verdadeiro.</p>
-      <button class="btn" id="abrirPorta">💘 Começar o Jogo</button>
+     <h1>Labirinto Escondido</h1><br><br>
+    <!-- <br>  <p>Descubra o caminho certo e encontre o coração verdadeiro.</p> -->
+     <br> <button  id="abrirPorta">Play 🤖</button><br><br><br><br><br>
+     <a href="perfil.html" class="btn">📄 Criar Perfil</a>
     </section>
 
     <!-- Seção do jogo -->
@@ -58,14 +59,21 @@
       <div class="vida" id="barraVida">❤️❤️❤️</div>
       <h2 id="tituloNivel">Jogo de Memórias - Nível 1</h2>
 
-      <div class="cartas" id="cartasContainer"></div>
+      <div class="cartas" id="cartasContainer">
+      </div><br><br><br><br><br><br><br><br><hr><br>
+      <button class="mmm" id="reiniciarBtn">🔄 Reiniciar</button>
+      <button class="mmm" id="pausarBtn">⏸️ Pausar</button>
+      <button class="mmm" id="continuarBtn">▶️ Continuar</button>
+    <button class="mmm">  <a href="index.html">↩</a></button>
     </section>
+    
   </main>
+  
 
   <!-- Personagem flutuante e corações -->
-  <div class="personagem">🧑‍🎤</div>
+  <div class="personagem">💣🧲</div>
   <div id="coracoesFlutuantes"></div>
-
+<div class="magic-sparkles" id="sparkles"></div>
   <!-- Scripts -->
   <script>
     // Mostra nome do jogador na mensagem de boas-vindas
